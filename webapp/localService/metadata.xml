@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ITSK.QUARTERLYAWARD" xml:lang="ru" sap:schema-version="1">
+
+			<EntityType Name="Appruval">
+				<Key>
+					<PropertyRef Name="Seqnr" />
+				</Key>
+				<Property Name="Seqnr" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+				<Property Name="ObjidMng" Type="Edm.String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="Otype" Type="Edm.String" Nullable="true" />
+				<Property Name="Objid" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="Pup" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="Fio" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />	
+				<Property Name="Position" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="Level" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="Bonus" Type="Edm.Decimal" Nullable="true" Precision="19" Scale="4" />
+				<Property Name="Total" Type="Edm.Decimal" Nullable="true" Precision="19" Scale="4" />
+				<Property Name="Waers" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="Objid300" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="StextBu" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="Budget" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+			</EntityType>
+
+			<EntityType Name="Requests">
+				<Key>
+					<PropertyRef Name="Seqnr" />
+				</Key>
+				<Property Name="Seqnr" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+				<Property Name="ObjidMng" Type="Edm.String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+				<Property Name="ObjidSub" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="ObjidBu" Type="Edm.String" Nullable="true" MaxLength="30" Unicode="true" FixedLength="false" />
+				<Property Name="StextSub" Type="Edm.String" Nullable="true" MaxLength="60" Unicode="true" FixedLength="false" />
+				<Property Name="PernrSub" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="EnameSub" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="StextBu" Type="Edm.String" Nullable="true" MaxLength="60" Unicode="true" FixedLength="false" />
+				<Property Name="Betrg" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="Waers" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="Rationale" Type="Edm.String" Nullable="true" MaxLength="255" Unicode="true" FixedLength="false" />
+				<Property Name="Status" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />	
+			</EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

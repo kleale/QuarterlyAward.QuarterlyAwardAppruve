@@ -1,0 +1,94 @@
+<mvc:View 
+	controllerName="itsk.QuarterlyAward.controller.AwardsList" 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:semantic="sap.m.semantic">
+	
+	<App>
+		<pages>
+			<semantic:FullscreenPage title="{i18n>title}">
+				<semantic:content>
+
+					<Toolbar>
+						<Title
+							id="tableHeaderT"
+							text="Позиции"/>
+						<ToolbarSpacer/>
+						<!--<Label text="ИТОГО: {AppruvalSet>sumAll}">
+							<layoutData>
+									<ToolbarLayoutData shrinkable="false" />
+							</layoutData>
+						</Label>-->
+						<SearchField
+							id="searchFieldT"
+							search="onSearch"
+							tooltip="Поиск по фамилии"
+							width="auto"/>
+					</Toolbar>
+					
+					<t:TreeTable
+				        id="tableTree"
+				        selectionMode="MultiToggle"
+				        enableColumnReordering="false"
+				        expandFirstLevel="false"
+				        rows="{path:'AppruvalSet>/', parameters: {arrayNames:['children']}}">
+						
+				        <t:columns>
+				            <t:Column label="Бюджет/Источник премирования">
+				                <t:template>
+				                    <ObjectIdentifier title="{AppruvalSet>StextBu}" text="{AppruvalSet>Fio}"/>
+				                </t:template>
+				            </t:Column>
+				            <t:Column label="Статус согласования">
+				                <t:template>
+				                    <Text visible="{AppruvalSet>Visible}" text="{path: 'AppruvalSet>Status', formatter: '.formatter.itskStatus'}"/>
+				                </t:template>
+				            </t:Column>
+				            <t:Column label="ФИО/Штатная должность">
+				                <t:template>
+				                	<ObjectIdentifier title="{AppruvalSet>Fio}" text="{AppruvalSet>Position}"/>
+				                </t:template>
+				            </t:Column>
+				            <t:Column label="Размер премии">
+				                <t:template>
+				                	<FlexBox alignItems="Center" justifyContent="End">
+										<items>
+						                    <ObjectNumber
+												unit="RUB"
+												number="{
+													path: 'AppruvalSet>Bonus',
+													formatter: '.formatter.numberUnit'
+												}"/>
+						                </items>
+									</FlexBox>
+				                </t:template>
+				            </t:Column>
+				            <t:Column label="Действие">
+				            	<t:template>
+					                <FlexBox alignItems="Center" justifyContent="End" visible="{AppruvalSet>Visible}">
+										<items>
+											<Button icon="sap-icon://decline" type="Reject" press="onDel" class="actionBtn sapUiTinyMarginEnd" />
+											<Button icon="sap-icon://edit" type="Default" press="onEdit" class="actionBtn sapUiTinyMarginEnd" />
+											<Button icon="sap-icon://create" type="Default" press="onDoc" class="actionBtn" />
+										</items>
+									</FlexBox>
+				                </t:template>
+				            </t:Column>
+				        </t:columns>
+				    </t:TreeTable>
+										
+				</semantic:content>
+				
+				<semantic:positiveAction>
+					<semantic:PositiveAction text="Согласовать все" press="onUpdateStockObjects"/>
+				</semantic:positiveAction>
+				<semantic:negativeAction>
+					<semantic:NegativeAction text="Удалить" press="onUnlistObjects"/>
+				</semantic:negativeAction>
+				
+			</semantic:FullscreenPage>
+		</pages>
+	</App>
+</mvc:View>

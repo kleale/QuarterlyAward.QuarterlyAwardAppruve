@@ -1,0 +1,20 @@
+{
+  "d" : {
+    "results" : [
+      {
+        "ObjidMng" : "70011975",
+        "ObjidSub" : "70011976",
+        "ObjidBu" : "40008452",
+        "Seqnr" : "000",
+        "StextSub" : "Референт",
+        "PernrSub" : "00029493",
+        "EnameSub" : "Парфенов",
+        "StextBu" : "Департамент по работе с персоналом",
+        "Betrg" : "10000.00",
+        "Waers" : "RUB",
+        "Rationale" : "Обоснование",
+        "Status" : "1"
+      }
+    ]
+  }
+}
